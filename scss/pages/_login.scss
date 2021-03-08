@@ -1,0 +1,46 @@
+     body {
+         .accountForm {
+             width: 80%;
+             @include flexCenter(column);
+             input {
+                 @include inputStyle;
+             }
+             button {
+                 margin: 1rem;
+                 @include buttonStyle;
+                 padding: 1rem 2rem 1rem 2rem;
+                 border-radius: 15px;
+                 font-size: 14px;
+             }
+         }
+         .navLinks {
+             margin: 5rem 1rem 1rem 1rem;
+             @include flexCenter(column);
+             a {
+                 color: white;
+                 strong {
+                     color: $alt-clr;
+                     &:hover {
+                         color: grey;
+                     }
+                 }
+             }
+         }
+     }
+     
+     /// MEDIA QUERIES ///
+     @media screen and(min-width: 768px) {
+         body {
+             .accountForm {
+                 width: 70%;
+             }
+         }
+     }
+     
+     @media screen and(min-width: 992px) {
+         body {
+             .accountForm {
+                 width: 50%;
+             }
+         }
+     }

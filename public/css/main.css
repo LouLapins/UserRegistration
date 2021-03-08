@@ -16,11 +16,29 @@ body {
       background-color: white;
       padding: 1rem;
       border-radius: 2rem; }
+  body #logoutBtn {
+    align-self: flex-end; }
+    body #logoutBtn a {
+      color: white;
+      font-size: 14px;
+      font-weight: 300; }
+      body #logoutBtn a i {
+        position: relative;
+        top: 5px;
+        margin: 1rem;
+        font-size: 28px; }
   body h1 {
     text-align: center;
     font-size: 40px;
     color: white;
-    margin-bottom: 0; }
+    margin: 0; }
+  body .accountHeading {
+    margin-top: 2rem; }
+  body h2 {
+    color: white;
+    font-weight: 300; }
+  body h3 {
+    color: white; }
   body #addTaskForm {
     width: 100%;
     display: flex;
@@ -31,13 +49,16 @@ body {
       background-color: #8cc4ba;
       color: white;
       border: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 100;
+      box-shadow: 9px 7px 38px -4px rgba(0, 0, 0, 0.87);
+      cursor: pointer;
       border-radius: 50%;
       width: 3rem;
       height: 3rem;
-      font-family: "Roboto", sans-serif;
-      font-weight: 100;
-      font-size: 28px;
-      box-shadow: 9px 7px 38px -4px rgba(0, 0, 0, 0.87); }
+      font-size: 28px; }
+      body #addTaskForm #addTaskBtn:hover {
+        background-color: #68afa3; }
     body #addTaskForm #taskInput {
       border: none;
       border-radius: 1rem;
@@ -70,7 +91,7 @@ body {
     body #list #sortBtnWrapper {
       margin: 1rem 0 1rem 0; }
     body #list .sortBtn:hover {
-      color: #8c8c8c; }
+      color: #c9bebe; }
     body #list .taskRow {
       border-bottom: 1px solid rgba(175, 176, 177, 0.215);
       display: flex;
@@ -86,7 +107,7 @@ body {
           font-weight: 300; }
         body #list .taskRow .task #taskDate {
           font-size: 11px;
-          color: #8c8c8c;
+          color: #c9bebe;
           margin-top: 5px; }
         body #list .taskRow .task #nameDateWrapper {
           display: flex;
@@ -124,12 +145,64 @@ body {
         font-size: 14px; }
         body #list .taskRow #deleteBtn i:hover,
         body #list .taskRow #backBtn i:hover {
-          color: #8c8c8c; }
+          color: #c9bebe; }
     body #list .paginationBtn {
       font-size: 1.5rem;
       color: #383737; }
       body #list .paginationBtn i:hover {
-        color: #8c8c8c; }
+        color: #c9bebe; }
+
+body .accountForm {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  body .accountForm input {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 60%;
+    box-shadow: 9px 7px 38px -4px rgba(0, 0, 0, 0.87);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 1rem 0.5rem 1rem 0.5rem; }
+  body .accountForm button {
+    margin: 1rem;
+    background-color: #8cc4ba;
+    color: white;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    box-shadow: 9px 7px 38px -4px rgba(0, 0, 0, 0.87);
+    cursor: pointer;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 15px;
+    font-size: 14px; }
+    body .accountForm button:hover {
+      background-color: #68afa3; }
+
+body .navLinks {
+  margin: 5rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  body .navLinks a {
+    color: white; }
+    body .navLinks a strong {
+      color: #c9bebe; }
+      body .navLinks a strong:hover {
+        color: grey; }
+
+@media screen and (min-width: 768px) {
+  body .accountForm {
+    width: 70%; } }
+
+@media screen and (min-width: 992px) {
+  body .accountForm {
+    width: 50%; } }
 
 @media screen and (min-width: 768px) {
   body #list {

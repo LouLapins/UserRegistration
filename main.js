@@ -1,8 +1,11 @@
 const express = require("express");
-const bodyParser = require("body-parser"); //För att kunna läsa EJS body data
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const router = require("./routes/todoRoute");
+const router = require("./routes/homeRoute");
+const userRouter = require("./routes/userRoute");
 const nodeSass = require("node-sass-middleware");
+const cookieParser = require("cookie-parser");
+
 
 require("dotenv").config();
 
@@ -26,8 +29,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
-
+app.use(cookieParser());
 app.use("/", router);
+app.use("/", userRouter);
 
 const options = {
     useNewUrlParser: true,

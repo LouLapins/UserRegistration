@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('include/_head') %>
+
+    <body>
+
+        <h1 class="accountHeading">Welcome to TaskBase</h1>
+        <h2>Create an account for access.</h2>
+
+        <form class="accountForm" action="/register" method="post">
+
+            <% if(error) {  %>
+
+                <div>
+                    <%= error %>
+                </div>
+
+                <% } %>
+                    <input type="text" name="name" placeholder="Username">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <button type="submit">Register</button>
+
+        </form>
+
+        <div class="navLinks">
+            <h3>Already have an account?</h3>
+            <a href="/login">Sign in <strong>here</strong></a>
+        </div>
+
+    </body>

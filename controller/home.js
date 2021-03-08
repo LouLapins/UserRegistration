@@ -1,11 +1,8 @@
-const express = require("express");
 const Task = require("../model/task");
-const router = express.Router();
+const User = require("../model/user");
 
 
-// READ //
-
-router.get("/", async(req, res) => {
+const homeRender = async(req, res) => {
 
     const sorted = +req.query.sorted || 1;
     const page = +req.query.page || 1;
@@ -27,11 +24,9 @@ router.get("/", async(req, res) => {
         res.render("error.ejs", { error: err });
     }
 
-})
+}
 
-// CREATE // 
-
-router.post("/", async(req, res) => {
+const addTask = async(req, res) => {
 
     try {
         await new Task({ name: req.body.name }).save();
@@ -41,12 +36,9 @@ router.post("/", async(req, res) => {
         res.render("error.ejs", { error: err });
     }
 
-})
+}
 
-
-// UPDATE (EDIT) //
-
-router.get("/edit/:id", async(req, res) => {
+const editTaskGet = async(req, res) => {
     const sorted = +req.query.sorted || 1;
     const page = +req.query.page || 1;
 
@@ -69,11 +61,9 @@ router.get("/edit/:id", async(req, res) => {
         res.render("error.ejs", { error: err });
     }
 
+}
 
-
-})
-
-router.post("/edit", async(req, res) => {
+const editTaskPost = async(req, res) => {
 
     const sorted = +req.query.sorted || 1;
     const page = +req.query.page || 1;
@@ -83,18 +73,19 @@ router.post("/edit", async(req, res) => {
 
     res.redirect(`/?page=${page}&&sorted=${sorted}`);
 
-})
+}
 
-
-// DELETE //
-
-router.get("/delete/:id", async(req, res) => {
+const deleteTask = async(req, res) => {
 
     await Task.deleteOne({ _id: req.params.id });
 
     res.redirect("/");
-})
+}
 
-
-
-module.exports = router;
+module.exports = {
+    homeRender,
+    addTask,
+    editTaskGet,
+    editTaskPost,
+    deleteTask
+}

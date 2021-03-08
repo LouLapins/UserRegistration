@@ -4,3 +4,28 @@
     align-items: center;
     flex-direction: $direction;
 }
+
+@mixin buttonStyle {
+    background-color: $accent-clr;
+    color: white;
+    border: none;
+    font-family: $main-font;
+    font-weight: 100;
+    box-shadow: $shadow;
+    cursor: pointer;
+    &:hover {
+        background-color: #68afa3;
+    }
+}
+
+@mixin inputStyle {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 60%;
+    box-shadow: $shadow;
+    font-family: $main-font;
+    font-weight: $fw-light;
+    font-size: 16px;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+}
