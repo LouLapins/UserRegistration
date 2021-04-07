@@ -48,7 +48,7 @@ mongoose.connect(process.env.DATABASE_URL,
         console.log("Connected to database!");
 
         app.listen(process.env.PORT, () => {
-            console.log("Application is running!");
+            console.log("Application is running");
         })
 
     })
